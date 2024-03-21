@@ -1,0 +1,49 @@
+body {
+    background-image: url("first.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+body{color: rgb(0, 0, 0);}
+.button-link {
+    position: fixed;
+    bottom: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #4c74af;
+  }
+  
+  .button-link:hover {
+    background-color: #4562a0;
+  }
+  .button-link1 {
+    position: fixed;
+    bottom: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #4c74af;
+  }
+  
+  .button-link1:hover {
+    background-color: #4562a0;
+  }
+  .button-link3 {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #4c74af;
+  }
+  
+  .button-link3:hover {
+    background-color: #4562a0;

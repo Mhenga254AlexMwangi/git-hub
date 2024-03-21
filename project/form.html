@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Form</title>
+    <style>
+        body {
+            background-image: url('background_image.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            width: 50%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.7); /* Add semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin: 5px 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>FILL THE FORM BELOW</h1>
+    <strong>Enter your names as per ID:</strong> <input type="text" name="id" /><br/>
+    <b>Select the type of vacationers</b><br/>
+    <input type="radio" name="type" value="family"/>Family<br/>
+    <input type="radio" name="type" value="business"/>Business<br/>
+    <input type="radio" name="type" value="group"/>Group<br/>
+    <input type="radio" name="type" value="individual"/>Individual<br/>
+    <b>If Business, Enter Company Name:</b><br/>
+    <input type="text" name="cname" /><br/>
+    <b>If family or group provide us with the number expected:</b><br/>
+    <input type="number" name="num" min=2 max=5><br/>
+    <b>Provide us with a working email or a phone number:</b><br/>
+    <input type="email" size="50" name="mail"/><br/>
+    <b>Choose the type of accommodations:</b><br/>
+    <input type="checkbox" name="accommodation" checked/>Hotel<br/>
+    <input type="checkbox" name="accommodation" checked/>Airbnb<br/>
+    <input type="checkbox" name="accommodation" checked/>Resorts<br/>
+    <input type="checkbox" name="accommodation" checked/>Camping<br/>
+    <input type="checkbox" name="accommodation" checked/>Lodges<br/>
+    <input type="checkbox" name="accommodation" checked/>Beach houses<br/>
+    <b>Fill the correct period of stay:</b><br/>
+    Start date: <input type="date" id="startdate"/><br/>
+    Last date: <input type="date" id="lastdate"/><br/>
+    <b>Any other special requirements, explain well</b><br/>
+    <input type="text" name="specialreq" ><br/>
+    <div class="error-message" id="errorMessage"></div><br/>
+    <button class="button" onclick="goBack()">Back</button>                                 
+    <button class="button" onclick="continueForm()">Continue</button>
+</div>
+
+<script>
+    function validateForm() {
+        var errorMessage = "";
+        var name = document.getElementsByName("id")[0].value;
+        var type = document.querySelector('input[name="type"]:checked');
+        var email = document.getElementsByName("mail")[0].value;
+        var startDate = document.getElementById("startdate").value;
+        var lastDate = document.getElementById("lastdate").value;
+
+        if (!name || !type || !email || !startDate || !lastDate) {
+            errorMessage += "All fields are required.<br>";
+        }
+
+        var numExpected = document.getElementsByName("num")[0].value;
+        if (type && type.value !== "business" && (!numExpected || numExpected < 2 || numExpected > 5)) {
+            errorMessage += "For family or group, provide a number between 2 and 5.<br>";
+        }
+
+        if (email && !isValidEmail(email)) {
+            errorMessage += "Invalid email address.<br>";
+        }
+
+        if (startDate && lastDate && startDate >= lastDate) {
+            errorMessage += "Start date must be before last date.<br>";
+        }
+
+        return errorMessage;
+    }
+
+    function isValidEmail(email) {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    function goBack() {
+        // Implement go back functionality
+        console.log("Going back...");
+    }
+
+    function continueForm() {
+        var errorMessage = validateForm();
+        var errorMessageDiv = document.getElementById("errorMessage");
+        if
+
+
+
+    
